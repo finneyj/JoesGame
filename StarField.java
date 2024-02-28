@@ -4,7 +4,7 @@
  * and move outward to the edges in a randome direction.
  */
 
-public class Starfield
+public class StarField
 {
     private Star[] stars;
     private Ball horizon;
@@ -21,7 +21,7 @@ public class Starfield
 	 * @param numberOfStars The number of stars that should be on screen at any point in time
 	 * @param speed The spparent speed of the effect - higher numbers are faster.
 	 */
-    public Starfield(int numberOfStars, double speed, GameArena a)
+    public StarField(int numberOfStars, double speed, GameArena a)
     {
         stars = new Star[numberOfStars];
         this.effectSpeed = speed;
