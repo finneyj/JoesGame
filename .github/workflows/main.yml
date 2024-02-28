@@ -1,0 +1,32 @@
+name: Java Compile Workflow
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+
+    - name: Set up JDK
+      uses: actions/setup-java@v4
+      with:
+        distribution: 'adopt'
+        java-version: '11'
+
+    - name: Compile Java files
+      run: javac *.java
+      
+    - name: Display compiled files
+      run: find .
+      
+    - name: Upload source code artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: source-code
+        path: "**/*.java"
